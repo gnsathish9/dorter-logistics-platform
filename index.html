@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loadly Logistics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand">
+          <span class="brand-mark">L</span>
+          <div>
+            <strong>Loadly</strong>
+            <span>City logistics</span>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#book" class="active">Book</a>
+          <a href="#track">Track</a>
+          <a href="#fleet">Fleet</a>
+          <a href="#business">Business</a>
+        </nav>
+        <div class="support-card">
+          <span>24/7 support</span>
+          <strong>+91 90000 12345</strong>
+        </div>
+      </aside>
+
+      <main>
+        <section class="topbar">
+          <div>
+            <p class="eyebrow">Instant intra-city deliveries</p>
+            <h1>Book a mini truck, bike, or van in minutes.</h1>
+          </div>
+          <button id="newBookingBtn" class="primary-btn" type="button">New booking</button>
+        </section>
+
+        <section class="hero-map" aria-label="Live delivery map">
+          <div class="map-grid"></div>
+          <div class="route route-one"></div>
+          <div class="route route-two"></div>
+          <div class="pin pickup">Pickup</div>
+          <div class="pin drop">Drop</div>
+          <div class="vehicle-dot bike">2W</div>
+          <div class="vehicle-dot truck">Ace</div>
+          <div class="map-panel">
+            <span>Average pickup</span>
+            <strong>18 min</strong>
+            <small>32 active partners nearby</small>
+          </div>
+        </section>
+
+        <section id="book" class="booking-layout">
+          <form id="bookingForm" class="booking-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Book now</p>
+              <h2>Delivery details</h2>
+            </div>
+
+            <label>
+              Pickup location
+              <input id="pickup" name="pickup" value="Indiranagar, Bengaluru" required />
+            </label>
+
+            <label>
+              Drop location
+              <input id="drop" name="drop" value="Koramangala, Bengaluru" required />
+            </label>
+
+            <div class="field-grid">
+              <label>
+                Distance
+                <div class="input-suffix">
+                  <input id="distance" name="distance" type="number" min="1" max="80" value="9" required />
+                  <span>km</span>
+                </div>
+              </label>
+              <label>
+                Weight
+                <div class="input-suffix">
+                  <input id="weight" name="weight" type="number" min="1" max="2500" value="45" required />
+                  <span>kg</span>
+                </div>
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>Goods type</legend>
+              <div class="segmented">
+                <label><input type="radio" name="goods" value="Retail stock" checked /> Retail</label>
+                <label><input type="radio" name="goods" value="Appliances" /> Appliances</label>
+                <label><input type="radio" name="goods" value="House shifting" /> Shifting</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Pickup time</legend>
+              <div class="segmented">
+                <label><input type="radio" name="schedule" value="Now" checked /> Now</label>
+                <label><input type="radio" name="schedule" value="Today evening" /> Evening</label>
+                <label><input type="radio" name="schedule" value="Tomorrow" /> Tomorrow</label>
+              </div>
+            </fieldset>
+
+            <button class="primary-btn full" type="submit">Confirm booking</button>
+          </form>
+
+          <div class="quote-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Recommended vehicle</p>
+              <h2 id="recommendedVehicle">Tata Ace</h2>
+            </div>
+            <div id="vehicleOptions" class="vehicle-list" aria-live="polite"></div>
+            <div class="fare-box">
+              <span>Estimated fare</span>
+              <strong id="fareTotal">₹0</strong>
+              <small id="fareBreakdown">Includes base fare, distance, and load handling.</small>
+            </div>
+          </div>
+        </section>
+
+        <section id="track" class="workbench">
+          <div class="section-heading">
+            <p class="eyebrow">Live operations</p>
+            <h2>Tracking board</h2>
+          </div>
+          <div id="bookingList" class="booking-list"></div>
+        </section>
+
+        <section id="fleet" class="metrics-grid">
+          <div>
+            <span>Active drivers</span>
+            <strong>32</strong>
+            <small>8 bikes, 11 autos, 9 mini trucks, 4 407s</small>
+          </div>
+          <div>
+            <span>On-time rate</span>
+            <strong>94%</strong>
+            <small>Last 7 days</small>
+          </div>
+          <div>
+            <span>Business orders</span>
+            <strong>128</strong>
+            <small>This week</small>
+          </div>
+        </section>
+
+        <section id="business" class="business-band">
+          <div>
+            <p class="eyebrow">For merchants</p>
+            <h2>Bulk dispatch, recurring routes, and GST-ready invoices.</h2>
+          </div>
+          <button id="bulkDemoBtn" class="secondary-btn" type="button">Load bulk demo</button>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

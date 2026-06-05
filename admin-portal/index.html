@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loadly Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside>
+      <div class="brand"><span>L</span><strong>Loadly Admin</strong></div>
+      <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#customers">Customers</a>
+        <a href="#bookings">Bookings</a>
+        <a href="#drivers">Drivers</a>
+        <a href="#payments">Payments</a>
+      </nav>
+    </aside>
+    <main>
+      <header>
+        <div>
+          <p>Operations control</p>
+          <h1>Track customers, bookings, drivers, and payments.</h1>
+          <small id="lastUpdated">Waiting for dashboard data...</small>
+        </div>
+        <button id="refreshBtn">Refresh</button>
+      </header>
+
+      <section id="dashboard" class="metrics">
+        <article><span>Customers</span><strong id="customers">0</strong></article>
+        <article><span>Drivers</span><strong id="partners">0</strong></article>
+        <article><span>Bookings</span><strong id="bookingsCount">0</strong></article>
+        <article><span>Revenue</span><strong id="revenue">₹0</strong></article>
+      </section>
+
+      <section id="customers" class="panel">
+        <div class="panel-head">
+          <h2>Customers</h2>
+          <input id="customerSearch" placeholder="Search customers" />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>GST</th>
+                <th>Bookings</th>
+                <th>Active</th>
+                <th>Paid</th>
+              </tr>
+            </thead>
+            <tbody id="customerRows">
+              <tr><td colspan="7">Loading customers...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="bookings" class="panel">
+        <div class="panel-head">
+          <h2>Live bookings</h2>
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="SEARCHING_PARTNER">Searching</option>
+            <option value="PARTNER_ASSIGNED">Assigned</option>
+            <option value="IN_TRANSIT">In transit</option>
+            <option value="DELIVERED">Delivered</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Booking</th>
+                <th>Route</th>
+                <th>Vehicle</th>
+                <th>Status</th>
+                <th>Payment</th>
+                <th>Fare</th>
+              </tr>
+            </thead>
+            <tbody id="bookingRows">
+              <tr><td colspan="6">Loading dashboard data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="drivers" class="panel">
+        <div class="panel-head">
+          <h2>Driver partners</h2>
+          <input id="partnerSearch" placeholder="Search partners" />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Vehicle</th>
+                <th>Plate</th>
+                <th>Trips</th>
+                <th>Active jobs</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody id="partnerRows">
+              <tr><td colspan="8">Loading partners...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="payments" class="panel">
+        <h2>Payment handling</h2>
+        <div id="paymentRows" class="cards"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

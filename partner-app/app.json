@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Loadly Partner",
+    "slug": "loadly-partner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.loadly.partner"
+    }
+  }
+}

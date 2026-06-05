@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/src/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "admin-portal/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin-portal/$1"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin-portal/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/backend/src/server.js"
+    }
+  ]
+}
